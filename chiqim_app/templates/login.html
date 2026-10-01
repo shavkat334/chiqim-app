@@ -33,7 +33,8 @@
         <button class="alert-dismiss" data-alert-dismiss aria-label="Yopish">×</button>
       </div>
 
-      <form method="post" action="#" novalidate>
+      <form method="post" action="{% url 'main:login_sahifa' %}">
+        {% csrf_token %}
 
         <div class="field">
           <label for="username">Login yoki e-mail</label>

@@ -28,7 +28,8 @@
       <h1>Hisob yarating</h1>
       <p class="lead">Xarajatlaringizni kuzatishni hoziroq boshlang.</p>
 
-      <form method="post" action="#" novalidate>
+      <form method="post" action="{% url 'main:register_sahifa' %}">
+        {% csrf_token %}
 
         <div class="input-row">
           <div class="field">
@@ -48,17 +49,17 @@
 
         <div class="field">
           <label for="new_password">Parol</label>
-          <input class="input" type="password" id="new_password" name="new_password" placeholder="Kamida 8 belgi" required>
+          <input class="input" type="password" id="new_password" name="password" placeholder="Kamida 8 belgi" required>
         </div>
 
         <div class="field">
           <label for="confirm_password">Parolni tasdiqlang</label>
-          <input class="input" type="password" id="confirm_password" name="confirm_password" placeholder="Parolni qayta kiriting" required>
+          <input class="input" type="password" id="confirm_password" name="password2" placeholder="Parolni qayta kiriting" required>
         </div>
 
         <div class="field" style="margin-bottom:22px;">
           <label style="display:flex; align-items:flex-start; gap:8px; margin:0; font-weight:400; color:var(--ink-soft); font-size:13px;">
-            <input type="checkbox" name="agree" style="width:16px; height:16px; margin-top:2px;" required>
+            <input type="checkbox" name="consent" style="width:16px; height:16px; margin-top:2px;" required>
             <span>Men <a href="#" style="color:var(--brand);">foydalanish shartlari</a> bilan tanishdim va roziman</span>
           </label>
         </div>
